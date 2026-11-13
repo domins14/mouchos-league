@@ -25,3 +25,70 @@
 
 @media(max-width:900px){.cup-trophy{min-height:300px}.cup-trophy img{height:280px}}
 @media(max-width:640px){.cup-promo-copy{padding:34px 24px}.cup-trophy{min-height:270px}.cup-trophy img{height:250px}}
+
+/* Constitución Mouchense */
+.constitution-hero{position:relative;overflow:hidden;background:var(--ink);color:#fff;border-bottom:7px solid var(--lime)}
+.constitution-hero:before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 0 58%,rgba(184,255,50,.09) 58% 59%,transparent 59%),radial-gradient(circle at 82% 48%,rgba(184,255,50,.18),transparent 28%)}
+.constitution-hero-inner{position:relative;min-height:390px;display:flex;align-items:center;justify-content:space-between;gap:50px;padding-top:55px;padding-bottom:55px}
+.constitution-hero h1{margin:12px 0 22px;font:900 clamp(4.2rem,9vw,8.4rem)/.72 var(--display);text-transform:uppercase;letter-spacing:-.035em}
+.constitution-hero h1 em{color:var(--lime);font-style:normal}
+.constitution-hero-inner>img{width:270px;height:270px;object-fit:contain;filter:drop-shadow(0 22px 28px rgba(0,0,0,.48))}
+.constitution-motto{margin:0;color:#d3dcdf;font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em}
+.constitution-motto strong{color:var(--lime)}
+.constitution-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:34px;align-items:start;padding-top:48px}
+.constitution-index{position:sticky;top:128px;max-height:calc(100vh - 150px);overflow:auto;background:var(--ink);color:#fff;border-top:5px solid var(--lime);box-shadow:var(--shadow);scrollbar-color:var(--lime) var(--ink)}
+.constitution-index .index-kicker{margin:0;padding:22px 22px 0;color:var(--lime);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.18em}
+.constitution-index h2{margin:5px 22px 18px;font:800 1.7rem/1 var(--display);text-transform:uppercase}
+.constitution-index>ol{margin:0;padding:0 0 16px;list-style:none}
+.constitution-index>ol>li{border-top:1px solid rgba(255,255,255,.1)}
+.constitution-index a{display:flex;color:#c9d3d7;transition:.16s}
+.constitution-index a:hover,.constitution-index a:focus-visible{color:var(--lime);background:rgba(255,255,255,.05)}
+.constitution-index .index-title{align-items:center;gap:10px;padding:12px 18px;font:800 .86rem var(--body);text-transform:uppercase}
+.constitution-index .index-title span{display:grid;place-items:center;flex:0 0 28px;width:28px;height:28px;background:var(--lime);color:var(--ink);font:900 1rem var(--display)}
+.constitution-index ul{margin:0;padding:0 18px 10px 56px;list-style:none}
+.constitution-index ul a{padding:4px 0;font-size:.7rem}
+.constitution-document{min-width:0;background:#fff;padding:clamp(24px,5vw,60px);box-shadow:0 14px 50px rgba(7,20,30,.08)}
+.constitution-preamble{display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:center;margin-bottom:60px;padding:22px;background:#edf1e9;border:1px solid var(--line)}
+.constitution-preamble img{width:80px;height:80px;object-fit:contain}
+.constitution-preamble p{margin:0;font:700 1rem/1.6 var(--body)}
+.constitution-title{scroll-margin-top:128px;margin-top:70px}
+.constitution-title:first-of-type{margin-top:0}
+.constitution-title>header{margin-bottom:22px;padding:0 0 18px;border-bottom:5px solid var(--ink)}
+.constitution-title>header span{display:inline-block;margin-bottom:8px;padding:5px 9px;background:var(--lime);font:800 .7rem var(--body);text-transform:uppercase;letter-spacing:.14em}
+.constitution-title>header h2{max-width:750px;margin:0;font:900 clamp(2.4rem,5vw,4.3rem)/.86 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.law-article{scroll-margin-top:128px;padding:28px 0;border-bottom:1px solid var(--line)}
+.law-article:last-child{border-bottom:0}
+.law-article h3{margin:0 0 16px;font:800 2rem/1 var(--display);text-transform:uppercase}
+.law-article h3 span{display:block;margin-bottom:6px;color:#098a5a;font:800 .7rem var(--body);letter-spacing:.14em}
+.law-article h4{margin:28px 0 12px;font:800 1.3rem var(--display);text-transform:uppercase}
+.law-article p{margin:0 0 15px;color:#34444c}
+.law-article ul,.law-article ol{margin:10px 0 18px;padding-left:25px}
+.law-article li{margin:0 0 11px;padding-left:5px;color:#34444c}
+.sanction,.sacred-note{display:grid;grid-template-columns:115px 1fr;overflow:hidden;margin-top:22px!important;background:#fff1ef;border:1px solid #ffd0cb}
+.sanction strong,.sacred-note strong{display:grid;place-items:center;padding:12px;background:var(--red);color:#fff;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em}
+.sanction span,.sacred-note span{padding:12px 15px;font-weight:700;color:#7d2722}
+.sacred-note{background:#f1fbdc;border-color:#d1ee94}
+.sacred-note strong{background:#789e20;color:#fff}
+.sacred-note span{color:#3f5610}
+.rule-grid,.severity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0}
+.rule-grid p,.severity-grid p{display:flex;flex-direction:column;margin:0;padding:16px;background:#f0f3ee;border-left:4px solid var(--green)}
+.rule-grid span,.severity-grid span{margin-top:5px;color:#647178;font-size:.82rem}
+.severity-grid{grid-template-columns:repeat(4,1fr)}
+.severity-grid p:nth-child(1){border-color:#68b786}.severity-grid p:nth-child(2){border-color:#e2bf39}.severity-grid p:nth-child(3){border-color:#ed8636}.severity-grid p:nth-child(4){border-color:var(--red)}
+.law-definitions{display:grid;gap:12px;margin:18px 0}
+.law-definitions div{display:grid;grid-template-columns:180px 1fr;border:1px solid var(--line)}
+.law-definitions dt{padding:14px;background:var(--ink);color:#fff;font-weight:800}
+.law-definitions dd{margin:0;padding:14px;color:#435158}
+.inline-sanction{display:block;margin-top:8px;color:#bd332b;font-weight:800}
+.money-list{padding:0!important;list-style:none}
+.money-list li{display:flex;justify-content:space-between;gap:20px;margin:0;padding:11px 14px;border-bottom:1px solid var(--line)}
+.money-list li:nth-child(odd){background:#f2f4ef}
+.money-list strong{white-space:nowrap;color:#087b51}
+.constitution-end{display:flex;flex-direction:column;align-items:center;margin-top:70px;padding-top:35px;border-top:5px double var(--ink);text-align:center}
+.constitution-end img{width:82px;height:82px;object-fit:contain}
+.constitution-end p{margin:10px 0 4px;font:900 1.8rem var(--display);text-transform:uppercase}
+.constitution-end a{font-weight:800;border-bottom:2px solid var(--lime)}
+
+@media(max-width:1060px){.constitution-layout{grid-template-columns:230px minmax(0,1fr)}.constitution-index ul{display:none}.constitution-index .index-title{font-size:.75rem}.severity-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:800px){.constitution-hero-inner{min-height:320px}.constitution-hero-inner>img{width:190px;height:190px}.constitution-layout{grid-template-columns:1fr;padding-top:20px}.constitution-index{position:relative;top:auto;max-height:none}.constitution-index>ol{display:grid;grid-template-columns:repeat(2,1fr)}.constitution-index>ol>li{border:1px solid rgba(255,255,255,.1)}.constitution-document{padding:30px 22px}.constitution-title,.law-article{scroll-margin-top:105px}}
+@media(max-width:560px){.constitution-hero-inner{min-height:340px;padding-top:40px;padding-bottom:35px}.constitution-hero h1{font-size:4rem}.constitution-hero-inner>img{position:absolute;right:-18px;bottom:-20px;width:155px;height:155px;opacity:.45}.constitution-motto{max-width:300px;font-size:.82rem}.constitution-index>ol{grid-template-columns:1fr}.constitution-preamble{grid-template-columns:55px 1fr;padding:15px}.constitution-preamble img{width:55px;height:55px}.constitution-preamble p{font-size:.83rem}.constitution-title>header h2{font-size:2.45rem}.law-article h3{font-size:1.65rem}.rule-grid,.severity-grid{grid-template-columns:1fr}.law-definitions div{grid-template-columns:1fr}.sanction,.sacred-note{grid-template-columns:1fr}.money-list li{align-items:start;font-size:.84rem}}

@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const base = import.meta.env.BASE_URL;
+const titles = [
+  { id: 'titulo-i', number: 'I', label: 'Plantillas y puntuación', articles: [['articulo-1', 'Art. 1 · Puntuación'], ['articulo-2', 'Art. 2 · Límites de plantilla']] },
+  { id: 'titulo-ii', number: 'II', label: 'Mercado y traspasos', articles: [['articulo-3', 'Art. 3 · Cesiones'], ['articulo-4', 'Art. 4 · Recompra'], ['articulo-5', 'Art. 5 · Plazos e intercambios'], ['articulo-6', 'Art. 6 · Inflación'], ['articulo-7', 'Art. 7 · Negativos'], ['articulo-8', 'Art. 8 · Errores']] },
+  { id: 'titulo-iii', number: 'III', label: 'Clausulazos', articles: [['articulo-9', 'Art. 9 · Funcionamiento'], ['articulo-10', 'Art. 10 · Plazos'], ['articulo-11', 'Art. 11 · Copa'], ['articulo-12', 'Art. 12 · Invalidez']] },
+  { id: 'titulo-iv', number: 'IV', label: 'Las Promesas', articles: [['articulo-13', 'Art. 13 · Elección'], ['articulo-14', 'Art. 14 · Blindaje'], ['articulo-15', 'Art. 15 · Liquidación']] },
+  { id: 'titulo-v', number: 'V', label: 'Copa, quinielas y abonos', articles: [['calendario-copa', 'Calendario de Copa'], ['abonos-liga', 'Abonos de Liga'], ['premios-quiniela', 'Premios de Quiniela']] },
+  { id: 'titulo-vi', number: 'VI', label: 'Gobernanza', articles: [['articulo-16', 'Art. 16 · Ministros'], ['articulo-17', 'Art. 17 · Transparencia'], ['articulo-18', 'Art. 18 · Registro'], ['articulo-19', 'Art. 19 · Democracia']] },
+  { id: 'titulo-vii', number: 'VII', label: 'Código Penal', articles: [['gravedad-delitos', 'Escala de gravedad'], ['delitos-especiales', 'Delitos especiales'], ['disciplina-chats', 'Disciplina en chats']] },
+  { id: 'titulo-viii', number: 'VIII', label: 'Disposiciones especiales', articles: [['articulo-20', 'Art. 20 · Desempates'], ['articulo-21', 'Art. 21 · Jornadas adelantadas']] },
+];
+---
+<BaseLayout title="Constitución Mouchense · Mouchos League" description="Normativa oficial de Mouchos League: plantillas, mercado, clausulazos, Copa, sanciones y gobernanza.">
+  <section class="constitution-hero" id="inicio-constitucion">
+    <div class="container constitution-hero-inner">
+      <div>
+        <p class="eyebrow">Normativa oficial</p>
+        <h1>Constitución<br /><em>Mouchense</em></h1>
+        <p class="constitution-motto">Todo por el cumplimiento de <strong>La Sagrada Moucha</strong></p>
+      </div>
+      <img src={`${base}images/logo-mouchos.png`} alt="Búho, emblema de Mouchos League" width="512" height="512" />
+    </div>
+  </section>
+
+  <div class="container constitution-layout">
+    <aside class="constitution-index" aria-label="Índice de la Constitución">
+      <p class="index-kicker">Índice general</p>
+      <h2>8 títulos · 21 artículos</h2>
+      <ol>
+        {titles.map((title) => <li>
+          <a class="index-title" href={`#${title.id}`}><span>{title.number}</span>{title.label}</a>
+          <ul>{title.articles.map(([id, label]) => <li><a href={`#${id}`}>{label}</a></li>)}</ul>
+        </li>)}
+      </ol>
+    </aside>
+
+    <article class="constitution-document" aria-label="Texto de la Constitución Mouchense">
+      <div class="constitution-preamble">
+        <img src={`${base}images/logo-mouchos.png`} alt="" width="512" height="512" />
+        <p>La Mouchos League establece la presente Constitución como marco oficial para regular la competición, proteger la igualdad entre participantes y preservar el cumplimiento de La Sagrada Moucha.</p>
+      </div>
+
+      <section class="constitution-title" id="titulo-i">
+        <header><span>Título I</span><h2>Estructura de Plantillas y Puntuación</h2></header>
+        <article class="law-article" id="articulo-1"><h3><span>Artículo 1</span>Puntuación</h3><p>El sistema de puntuación oficial de la liga será la media de Diario AS y SofaScore.</p></article>
+        <article class="law-article" id="articulo-2"><h3><span>Artículo 2</span>Límites de Plantilla</h3><ul><li>El tamaño máximo de la plantilla es de <strong>21 jugadores</strong>.</li><li>Se establece un límite máximo de <strong>4 jugadores del mismo club de LaLiga</strong> por equipo.</li></ul></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-ii">
+        <header><span>Título II</span><h2>Mercado, Traspasos y Pactos Prohibidos</h2></header>
+        <article class="law-article" id="articulo-3"><h3><span>Artículo 3</span>Cesiones y Préstamos</h3><p>Queda totalmente prohibido cualquier tipo de cesión o préstamo de jugadores bajo cualquier concepto.</p><p class="sanction"><strong>Sanción</strong><span>3.000.000 € y detracción de 15 puntos.</span></p></article>
+        <article class="law-article" id="articulo-4"><h3><span>Artículo 4</span>La «Recompra» o Cesión Encubierta</h3><p>Se considera cesión encubierta la venta de un jugador y la posterior recompra del mismo —ya sea por compra directa al usuario original o mediante un intermediario— en un período inferior a 3 jornadas.</p><p>La única recompra válida antes de ese plazo es si el jugador vuelve a salir al mercado de la computadora y se puja por él de forma abierta.</p><p class="sanction"><strong>Sanción</strong><span>7.000.000 € y detracción de 15 puntos.</span></p></article>
+        <article class="law-article" id="articulo-5"><h3><span>Artículo 5</span>Fichajes a Plazos e Intercambios</h3><p>Queda estrictamente prohibido cualquier fichaje a plazos, incluyendo el sobrepago artificial de un jugador para completar el abono o financiación de otro.</p><p>En caso de intercambio de jugadores, uno de los dos jugadores deberá transferirse a valor de mercado para evitar la inflación de las cláusulas.</p></article>
+        <article class="law-article" id="articulo-6"><h3><span>Artículo 6</span>Límite de Inflación de Traspasos</h3><p>Se limita la cantidad de dinero que se puede pagar a otro usuario en un traspaso para evitar transferencias de fondos ilícitas:</p><div class="rule-grid"><p><strong>Más de 10.000.000 €</strong><span>Máximo: el doble (×2) de su valor de mercado.</span></p><p><strong>Menos de 10.000.000 €</strong><span>Máximo: el triple (×3) de su valor de mercado.</span></p></div><p class="sanction"><strong>Sanción</strong><span>1.000.000 € de multa.</span></p></article>
+        <article class="law-article" id="articulo-7"><h3><span>Artículo 7</span>Auxilio de Negativos</h3><p>Queda prohibido realizar cualquier tipo de operación o transferencia con el único fin de ayudar a otro participante a salir de saldo negativo antes de que empiece la jornada.</p><p class="sanction"><strong>Sanción</strong><span>2.000.000 € y detracción de 5 puntos.</span></p></article>
+        <article class="law-article" id="articulo-8"><h3><span>Artículo 8</span>Errores Permitidos</h3><p>Los únicos errores permitidos son:</p><ol><li><strong>Error tipográfico grave en una puja.</strong> La puja quedará anulada y el jugador se entregará al segundo pujador más alto. Si nadie más hubiera pujado, el usuario conservará al jugador, pero la administración devolverá el dinero abonado de más sobre su puja pretendida original.</li><li><strong>Venta accidental al mercado.</strong> Si un usuario vende a un jugador sin querer y avisa inmediatamente, se le devolverá. Solo se permite cuando se comunica en el momento de la venta, no tiempo después.</li></ol></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-iii">
+        <header><span>Título III</span><h2>El Sagrado Sistema de Clausulazos</h2></header>
+        <article class="law-article" id="articulo-9"><h3><span>Artículo 9</span>Funcionamiento y Límites</h3><ul><li>El número de clausulazos totales en la liga es ilimitado.</li><li>Cada participante solo podrá <strong>realizar 1 clausulazo y recibir 1 clausulazo por jornada</strong>.</li><li>Se utilizará la opción Premium de Biwenger. Cada presidente puede subir la cláusula de sus jugadores aplicando los porcentajes correspondientes según los rangos establecidos en los ajustes de la liga.</li></ul></article>
+        <article class="law-article" id="articulo-10"><h3><span>Artículo 10</span>Plazos y Limitaciones</h3><dl class="law-definitions"><div><dt>Antigüedad</dt><dd>No se puede ejecutar un clausulazo sobre un jugador recién fichado hasta que hayan transcurrido 3 jornadas completas desde su fichaje.</dd></div><div><dt>Anticipación</dt><dd>Los clausulazos solo se podrán ejecutar hasta 3 días antes del inicio de la jornada.</dd></div><div><dt>Lesionados sin debutar</dt><dd>Queda prohibido clausurar a jugadores lesionados que todavía no hayan debutado en el equipo de su actual propietario en Biwenger.</dd></div><div><dt>Final de temporada</dt><dd>A partir de la jornada 35, inclusive, el mercado de clausulazos queda cerrado.</dd></div></dl></article>
+        <article class="law-article" id="articulo-11"><h3><span>Artículo 11</span>Bloqueo por Copa</h3><p>Se prohíbe taxativamente realizar clausulazos durante las jornadas previas a las eliminatorias de Copa para todos los participantes de la liga.</p></article>
+        <article class="law-article" id="articulo-12"><h3><span>Artículo 12</span>Clausulazos Inválidos</h3><p>Cualquier intento de ejecutar un clausulazo que viole cualquiera de los artículos anteriores será anulado inmediatamente.</p><p class="sanction"><strong>Sanción</strong><span>1.000.000 € de multa al infractor.</span></p></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-iv">
+        <header><span>Título IV</span><h2>Las «Promesas»</h2></header>
+        <article class="law-article" id="articulo-13"><h3><span>Artículo 13</span>Elección de Promesas</h3><p>Cada equipo dispondrá de dos jugadores considerados Promesas:</p><div class="rule-grid"><p><strong>Promesa A · Valor 0–4 M</strong><span>Elegida por orden descendente según la clasificación de la temporada anterior.</span></p><p><strong>Promesa B · Valor 0–2 M</strong><span>Elegida por orden ascendente según la clasificación de la temporada anterior.</span></p></div></article>
+        <article class="law-article" id="articulo-14"><h3><span>Artículo 14</span>Blindaje de Promesas</h3><p>La Promesa A, del rango 0–4 M, no podrá ser clausurada por ningún rival durante las 10 jornadas siguientes a su debut en la vida real.</p></article>
+        <article class="law-article" id="articulo-15"><h3><span>Artículo 15</span>Liquidación</h3><p>En caso de venta voluntaria al mercado o de ejecutarse un clausulazo válido sobre una promesa, se abonará al propietario el valor total de la misma sin descuento o penalización sobre el precio inicial.</p></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-v">
+        <header><span>Título V</span><h2>Copa, Quinielas y Abonos</h2></header>
+        <article class="law-article" id="calendario-copa"><h3><span>Sección 1</span>Calendario de Copa</h3><div class="rule-grid"><p><strong>Fase de grupos</strong><span>Jornadas 10, 12, 14, 16 y 18.</span></p><p><strong>Eliminatorias</strong><span>Jornadas 21, 24, 27 y 30.</span></p></div></article>
+        <article class="law-article" id="abonos-liga"><h3><span>Sección 2</span>Abonos de la Liga</h3><ul class="money-list"><li><span>Por punto conseguido</span><strong>10.000 €</strong></li><li><span>Por jornada · abono fijo de la computadora</span><strong>10.000 €</strong></li><li><span>Por jugador en el Once Ideal de la jornada</span><strong>150.000 €</strong></li></ul></article>
+        <article class="law-article" id="premios-quiniela"><h3><span>Sección 3</span>Premios de la Quiniela</h3><p>Se otorgarán primas económicas semanales según los aciertos en la quiniela oficial:</p><ul class="money-list"><li><span>10 aciertos</span><strong>1.250.000 €</strong></li><li><span>9 aciertos</span><strong>1.000.000 €</strong></li><li><span>8 aciertos</span><strong>750.000 €</strong></li><li><span>7 aciertos</span><strong>500.000 €</strong></li><li><span>6 aciertos</span><strong>375.000 €</strong></li><li><span>5 aciertos</span><strong>250.000 €</strong></li></ul><p class="sacred-note"><strong>Premio especial</strong><span>Quien acierte los 7 partidos marcados como clave recibirá un bono extra de 3.000.000 €.</span></p><p><strong>Bonus de Copa:</strong> acierto del ganador de partido, +62.500 €. Acierto de empate, +150.000 €.</p></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-vi">
+        <header><span>Título VI</span><h2>Transparencia, Gobernanza y Grupo de Ministros</h2></header>
+        <article class="law-article" id="articulo-16"><h3><span>Artículo 16</span>Los Ministros y el Presidente</h3><p>El Presidente designará a un Grupo de Ministros encargado de velar por el orden, investigar sospechas de chanchullos, aplicar el código penal de la liga y gestionar las quinielas.</p></article>
+        <article class="law-article" id="articulo-17"><h3><span>Artículo 17</span>Transparencia Obligatoria</h3><p>Todos los traspasos entre usuarios deben notificarse obligatoriamente en el foro de la liga en un plazo máximo de 24 horas. Se deberá aportar una captura de pantalla donde se aprecien claramente el traspaso y su valor.</p><p class="sanction"><strong>Sanción</strong><span>100.000 € de multa.</span></p></article>
+        <article class="law-article" id="articulo-18"><h3><span>Artículo 18</span>Registro y Prescripción</h3><p>Se mantendrá un foro histórico para registrar todas las transacciones, sanciones y resoluciones oficiales de la directiva. Todos los delitos o infracciones prescriben a los 3 meses de su ejecución.</p></article>
+        <article class="law-article" id="articulo-19"><h3><span>Artículo 19</span>Democracia y Encuestas</h3><ul><li>Las encuestas oficiales tendrán una duración estricta de 24 horas.</li><li>Para aprobar, eliminar o modificar cualquier norma se requiere una mayoría de 3/4 de los votos emitidos. Si el resultado contiene decimales, se redondeará al entero superior.</li><li>Una encuesta cerrada no podrá repetirse hasta que haya transcurrido un mes, salvo que se demuestre un error técnico o de redacción en su planteamiento.</li></ul></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-vii">
+        <header><span>Título VII</span><h2>El Código Penal</h2></header>
+        <article class="law-article" id="gravedad-delitos"><h3><span>Sección 1</span>Escala de Gravedad de Delitos</h3><p>Cualquier intento de sabotaje, manipulación del juego, búsqueda de desigualdad de condiciones o daño voluntario a terceros será juzgado por el Grupo de Ministros y posteriormente votado por todos los integrantes de la Mouchos League, excepto los implicados.</p><div class="severity-grid"><p><strong>Leve</strong><span>0–1 M · 0 puntos</span></p><p><strong>Moderada</strong><span>1–3 M · −5 puntos</span></p><p><strong>Grave</strong><span>3–5 M · −15 puntos</span></p><p><strong>Muy grave</strong><span>5–7 M · −25 puntos</span></p></div></article>
+        <article class="law-article" id="delitos-especiales"><h3><span>Sección 2</span>Delitos Especiales y de Seguridad</h3><dl class="law-definitions"><div><dt>Encubrimiento de sabotaje</dt><dd>Quien conozca un intento de sabotaje o trampa y no lo denuncie públicamente de inmediato será sancionado. Si lo confiesa a tiempo, quedará exento de juicio.<span class="inline-sanction">3.000.000 € y −15 puntos.</span></dd></div><div><dt>Golpe de Estado</dt><dd>Cualquier intento de subversión contra la presidencia o boicot masivo será castigado con la sanción máxima permitida —7 M y −25 puntos— o la expulsión directa.</dd></div><div><dt>Inactividad prolongada</dt><dd>Si un mánager acumula 5 días consecutivos de inactividad sin causa justificada, se considerará abandono del equipo y el staff procederá a su sustitución o liquidación.</dd></div><div><dt>Suplantación y gestión de equipos ajenos</dt><dd>Queda prohibido acceder o utilizar la cuenta de otro participante, así como realizar gestiones, negociaciones o acuerdos en nombre de un equipo ajeno. Esto incluye fichajes, ventas, intercambios, cláusulas y cualquier operación relacionada con la gestión del equipo.<span class="inline-sanction">Sanción: 100.000 €.</span></dd></div></dl></article>
+        <article class="law-article" id="disciplina-chats"><h3><span>Sección 3</span>Disciplina en los Canales de Comunicación</h3><h4>Mensajes en canales prohibidos</h4><ul class="money-list"><li><span>Mensaje estándar</span><strong>50.000 €</strong></li><li><span>Mensaje largo · 2 líneas o más</span><strong>100.000 €</strong></li><li><span>Spam extremo · más de 4 mensajes consecutivos</span><strong>200.000 € por mensaje</strong></li></ul><h4>Canal de Mercadillo</h4><ul><li>Máximo de 3 mensajes en los que no se añadan nuevos jugadores en venta. <strong>Sanción: 100.000 €.</strong></li><li>Queda prohibido enviar un mensaje inmediatamente después de otro con el fin de escalar artificialmente en la lista. <strong>Sanción: 500.000 €.</strong></li><li>Un jugador no podrá volver a anunciarse hasta 8 horas después de su último anuncio. Tampoco podrá incluirse en un mensaje con jugadores nuevos para eludir el plazo. <strong>Sanción: 500.000 €.</strong></li><li>Queda prohibido anunciar fichajes realizados al mercado en cualquier grupo que no sea el canal oficial de Mouchos League.</li></ul></article>
+      </section>
+
+      <section class="constitution-title" id="titulo-viii">
+        <header><span>Título VIII</span><h2>Disposiciones Especiales y Desempates</h2></header>
+        <article class="law-article" id="articulo-20"><h3><span>Artículo 20</span>Resolución de Empates</h3><p>En caso de empate a puntos en la clasificación general o en las eliminatorias directas de Copa, se aplicarán los siguientes criterios en orden:</p><ol><li>Mayor número de goles a favor acumulados.</li><li>Mayor número de asistencias acumuladas.</li><li>Menor número de tarjetas rojas recibidas.</li><li>Menor número de tarjetas amarillas recibidas.</li><li>Si persiste el empate absoluto, los implicados se batirán en duelo directo utilizando únicamente la puntuación obtenida en la siguiente jornada de liga.</li></ol></article>
+        <article class="law-article" id="articulo-21"><h3><span>Artículo 21</span>Regulación de Jornadas Adelantadas</h3><p>No se permite realizar cambios en la alineación de jugadores lesionados o sancionados de larga duración, ni de aquellos que se marchen a disputar competiciones externas antes del inicio de los partidos adelantados.</p><p>Sí se permiten cambios si un jugador se lesiona entre los partidos adelantados y el resto de la jornada normal, <strong>siempre que exista un parte de lesión</strong> y el jugador no haya disputado ni un solo minuto del partido adelantado. Si juega un solo minuto, su puntuación queda bloqueada y no podrá ser sustituido.</p></article>
+      </section>
+
+      <footer class="constitution-end"><img src={`${base}images/logo-mouchos.png`} alt="" width="512" height="512" /><p>Fin de la Constitución Mouchense</p><a href="#inicio-constitucion">Volver al inicio ↑</a></footer>
+    </article>
+  </div>
+</BaseLayout>
