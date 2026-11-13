@@ -1,0 +1,18 @@
+---
+import TeamBadge from './TeamBadge.astro';
+interface Props { name: string; rows: any[]; }
+const { name, rows } = Astro.props;
+---
+<article class="group-card">
+  <header><span>Grupo</span><strong>{name}</strong></header>
+  <div class="table-scroll">
+    <table class="group-table">
+      <thead><tr><th>Pos.</th><th>Equipo</th><th>Pts.</th><th>PJ</th><th>PG</th><th>PE</th><th>PP</th><th>GF</th><th>GC</th><th>DG</th></tr></thead>
+      <tbody>{rows.map((row) => <tr class:list={[row.position <= 4 && 'qualifying']}>
+        <td class="position"><span>{row.position}</span></td>
+        <th scope="row"><span class="team-cell"><TeamBadge team={row.team} size="sm" />{row.team.name}</span></th>
+        <td class="score-main">{row.points}</td><td>{row.played}</td><td>{row.won}</td><td>{row.drawn}</td><td>{row.lost}</td><td>{row.for}</td><td>{row.against}</td><td>{row.difference > 0 ? '+' : ''}{row.difference}</td>
+      </tr>)}</tbody>
+    </table>
+  </div>
+</article>

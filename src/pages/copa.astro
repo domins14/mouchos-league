@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import GroupTable from '../components/GroupTable.astro';
+import KnockoutBracket from '../components/KnockoutBracket.astro';
+import { getCup } from '../lib/data';
+const cup = getCup();
+---
+<BaseLayout title="Copa Mouchense · Grupos y eliminatorias" description="Clasificaciones de la fase de grupos y cuadro pendiente de la Copa Mouchense.">
+  <PageHero eyebrow="20 equipos · Borjinetta no participa" title="Copa Mouchense" intro="Cuatro grupos de cinco. Los cuatro primeros de cada grupo avanzarán a octavos; el cuadro definitivo está pendiente." stat="20" />
+  <section class="container content-section">
+    <div class="section-head"><div><p class="eyebrow">Estado actual</p><h2>Fase de grupos</h2></div><span class="section-link">1.ª jornada</span></div>
+    <div class="info-bar"><span>Victoria 3 pts · Empate 1 pt · Derrota 0 pts</span><span>GF y GC son puntos fantasy, no goles.</span><div class="legend"><span class="up">Zona de acceso a octavos</span></div></div>
+    <div class="groups-grid">{Object.entries(cup.groups).map(([name, rows]) => <GroupTable name={name} rows={rows} />)}</div>
+    <p class="info-bar">Esta tabla refleja el estado actual. Los puestos marcados son zonas de clasificación provisional; ningún equipo se declara clasificado hasta terminar la fase de grupos.</p>
+
+    <div class="section-head"><div><p class="eyebrow">Cruces pendientes</p><h2>Fase eliminatoria</h2></div><span class="section-link">16 equipos</span></div>
+    <div class="bracket-wrap"><KnockoutBracket /></div>
+    <p class="info-bar">Los criterios de desempate y los emparejamientos de octavos todavía no están definidos.</p>
+  </section>
+</BaseLayout>

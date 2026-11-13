@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import NewsCard from '../../components/NewsCard.astro';
+const news = (await getCollection('noticias')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const categories = ['Todas', 'Actualidad', 'Lesionados', 'Fichajes', 'Polémicas', 'Humor'];
+---
+<BaseLayout title="Noticias · Mouchos League" description="Todas las noticias, rumores, polémicas y humor de Mouchos League.">
+  <PageHero eyebrow="Redacción Mouchense" title="Noticias" intro="Actualidad, mercado y la dosis necesaria de polémica de nuestra liga fantasy. Las piezas iniciales son demostraciones ficticias." stat="ML" />
+  <section class="container content-section">
+    <div class="filter-bar" aria-label="Filtrar noticias por categoría">{categories.map((category, index) => <button type="button" class:list={['filter-button', index === 0 && 'is-active']} data-category={category} aria-pressed={index === 0 ? 'true' : 'false'}>{category}</button>)}</div>
+    <div class="news-list">{news.map((item) => <div data-news-category={item.data.category}><NewsCard entry={item} /></div>)}</div>
+    <p class="no-results" hidden>No hay noticias en esta categoría.</p>
+  </section>
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-button');
+    const items = document.querySelectorAll<HTMLElement>('[data-news-category]');
+    const empty = document.querySelector<HTMLElement>('.no-results');
+    buttons.forEach((button) => button.addEventListener('click', () => {
+      const category = button.dataset.category;
+      let visible = 0;
+      buttons.forEach((item) => { item.classList.toggle('is-active', item === button); item.setAttribute('aria-pressed', String(item === button)); });
+      items.forEach((item) => { const show = category === 'Todas' || item.dataset.newsCategory === category; item.hidden = !show; if (show) visible++; });
+      if (empty) empty.hidden = visible > 0;
+    }));
+  </script>
+</BaseLayout>

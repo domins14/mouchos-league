@@ -1,0 +1,17 @@
+{
+  "season": "2026-2027",
+  "updatedAt": "2026-11-13",
+  "standings": [
+    { "position": 1, "teamId": "parvos", "general": 742, "lastRound": 72, "players": 11 },
+    { "position": 2, "teamId": "mirazo", "general": 596, "lastRound": 36, "players": 11 },
+    { "position": 3, "teamId": "domins", "general": 570, "lastRound": 59, "players": 11 },
+    { "position": 4, "teamId": "puraysincorte", "general": 547, "lastRound": 42, "players": 11 },
+    { "position": 5, "teamId": "villancicos", "general": 528, "lastRound": 78, "players": 11 },
+    { "position": 6, "teamId": "mercenarios", "general": 528, "lastRound": 59, "players": 11 },
+    { "position": 7, "teamId": "fillos-do-mar", "general": 526, "lastRound": 55, "players": 11 },
+    { "position": 8, "teamId": "alpha", "general": 454, "lastRound": 43, "players": 11 },
+    { "position": 9, "teamId": "sporting-brionx", "general": 449, "lastRound": 48, "players": 11 },
+    { "position": 10, "teamId": "yonkarros", "general": 448, "lastRound": 49, "players": 11 },
+    { "position": 11, "teamId": "borjinetta", "general": 443, "lastRound": 43, "players": 11 }
+  ]
+}

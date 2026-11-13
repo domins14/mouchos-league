@@ -1,0 +1,40 @@
+{
+  "season": "2026-2027",
+  "updatedAt": "2026-11-13",
+  "groups": {
+    "A": [
+      { "position": 1, "teamId": "parvos", "points": 6, "played": 2, "won": 2, "drawn": 0, "lost": 0, "for": 157, "against": 75, "difference": 82 },
+      { "position": 2, "teamId": "mouchometa", "points": 3, "played": 1, "won": 1, "drawn": 0, "lost": 0, "for": 49, "against": 45, "difference": 4 },
+      { "position": 3, "teamId": "villancicos", "points": 3, "played": 2, "won": 1, "drawn": 0, "lost": 1, "for": 115, "against": 146, "difference": -31 },
+      { "position": 4, "teamId": "los-santos", "points": 0, "played": 1, "won": 0, "drawn": 0, "lost": 1, "for": 61, "against": 78, "difference": -17 },
+      { "position": 5, "teamId": "deportivo-sil", "points": 0, "played": 2, "won": 0, "drawn": 0, "lost": 2, "for": 83, "against": 121, "difference": -38 }
+    ],
+    "B": [
+      { "position": 1, "teamId": "ego-fc", "points": 6, "played": 2, "won": 2, "drawn": 0, "lost": 0, "for": 100, "against": 80, "difference": 20 },
+      { "position": 2, "teamId": "mercenarios", "points": 3, "played": 1, "won": 1, "drawn": 0, "lost": 0, "for": 62, "against": 31, "difference": 31 },
+      { "position": 3, "teamId": "domins", "points": 3, "played": 1, "won": 1, "drawn": 0, "lost": 0, "for": 59, "against": 49, "difference": 10 },
+      { "position": 4, "teamId": "racing-negreira", "points": 0, "played": 2, "won": 0, "drawn": 0, "lost": 2, "for": 90, "against": 111, "difference": -21 },
+      { "position": 5, "teamId": "moucho-maximo", "points": 0, "played": 2, "won": 0, "drawn": 0, "lost": 2, "for": 70, "against": 110, "difference": -40 }
+    ],
+    "C": [
+      { "position": 1, "teamId": "fillos-do-mar", "points": 6, "played": 2, "won": 2, "drawn": 0, "lost": 0, "for": 104, "against": 82, "difference": 22 },
+      { "position": 2, "teamId": "yonkarros", "points": 6, "played": 2, "won": 2, "drawn": 0, "lost": 0, "for": 85, "against": 77, "difference": 8 },
+      { "position": 3, "teamId": "puraysincorte", "points": 0, "played": 1, "won": 0, "drawn": 0, "lost": 1, "for": 33, "against": 36, "difference": -3 },
+      { "position": 4, "teamId": "sporting-brionx", "points": 0, "played": 1, "won": 0, "drawn": 0, "lost": 1, "for": 48, "against": 55, "difference": -7 },
+      { "position": 5, "teamId": "real-sirvent", "points": 0, "played": 2, "won": 0, "drawn": 0, "lost": 2, "for": 78, "against": 98, "difference": -20 }
+    ],
+    "D": [
+      { "position": 1, "teamId": "boullon", "points": 6, "played": 2, "won": 2, "drawn": 0, "lost": 0, "for": 102, "against": 84, "difference": 18 },
+      { "position": 2, "teamId": "alpha", "points": 3, "played": 1, "won": 1, "drawn": 0, "lost": 0, "for": 43, "against": 36, "difference": 7 },
+      { "position": 3, "teamId": "mirazo", "points": 3, "played": 2, "won": 1, "drawn": 0, "lost": 1, "for": 79, "against": 87, "difference": -8 },
+      { "position": 4, "teamId": "fc-del-rio", "points": 0, "played": 1, "won": 0, "drawn": 0, "lost": 1, "for": 48, "against": 56, "difference": -8 },
+      { "position": 5, "teamId": "bicholover", "points": 0, "played": 2, "won": 0, "drawn": 0, "lost": 2, "for": 77, "against": 86, "difference": -9 }
+    ]
+  },
+  "knockout": {
+    "roundOf16": [],
+    "quarterFinals": [],
+    "semiFinals": [],
+    "final": []
+  }
+}

@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('noticias');
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
+const date = entry.data.date.toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' });
+---
+<BaseLayout title={`${entry.data.title} · Mouchos League`} description={entry.data.summary}>
+  <article>
+    <header class="article-wrap article-head"><p class="eyebrow">{entry.data.category} · {date}</p><h1>{entry.data.title}</h1><p class="article-summary">{entry.data.summary}</p>{entry.data.demo && <p class="article-demo">Contenido ficticio creado para demostrar el diseño.</p>}</header>
+    {entry.data.image && <img class="article-cover" src={`${base}${entry.data.image.replace(/^\//, '')}`} alt={entry.data.imageAlt ?? ''} />}
+    {entry.data.gallery.length > 0 && <div class="article-gallery article-wrap">{entry.data.gallery.map((image) => <figure><img src={`${base}${image.src.replace(/^\//, '')}`} alt={image.alt} loading="lazy" /></figure>)}</div>}
+    <div class="article-wrap prose"><Content /><a class="back-link" href={`${base}noticias/`}>← Volver a noticias</a></div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,19 @@
+---
+import TeamBadge from './TeamBadge.astro';
+interface Props { rows: any[]; mode: 'promotion' | 'relegation'; compact?: boolean; }
+const { rows, mode, compact = false } = Astro.props;
+const shown = compact ? rows.slice(0, 5) : rows;
+const status = (position: number) => mode === 'promotion' ? position <= 4 : position >= 7;
+---
+<div class:list={['table-shell', compact && 'table-compact']}>
+  <table class="league-table">
+    <thead><tr><th scope="col">Pos.</th><th scope="col">Equipo</th><th scope="col" title="Puntos generales">General</th><th scope="col" title="Puntos de la última jornada">Últ. J.</th><th scope="col" title="Jugadores puntuados">Jug.</th></tr></thead>
+    <tbody>
+      {shown.map((row) => <tr class:list={[status(row.position) && mode]}>
+        <td class="position"><span>{row.position}</span></td>
+        <th scope="row"><span class="team-cell"><TeamBadge team={row.team} size="sm" /><span>{row.team.name}</span></span></th>
+        <td class="score-main">{row.general}</td><td>{row.lastRound}</td><td>{row.players}</td>
+      </tr>)}
+    </tbody>
+  </table>
+</div>

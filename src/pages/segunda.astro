@@ -1,0 +1,15 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import LeagueTable from '../components/LeagueTable.astro';
+import { getLeague } from '../lib/data';
+const league = getLeague('segunda');
+---
+<BaseLayout title="Segunda Mouchos · Clasificación" description="Clasificación completa de Segunda Mouchos y puestos de ascenso.">
+  <PageHero eyebrow="Temporada 2026/27" title="Segunda Mouchos" intro="Once aspirantes y cuatro billetes directos a Primera. La clasificación se ordena por puntos fantasy acumulados." stat="02" />
+  <section class="container content-section">
+    <div class="info-bar"><span><strong>Orden:</strong> puntos generales acumulados</span><span><strong>Sistema:</strong> Media AS + SofaScore</span><div class="legend"><span class="up">Ascenso (1.º–4.º)</span></div></div>
+    <LeagueTable rows={league.standings} mode="promotion" />
+    <p class="info-bar">“Jug.” es el campo original de la plataforma fantasy y se conserva de forma independiente; no representa necesariamente jornadas disputadas.</p>
+  </section>
+</BaseLayout>

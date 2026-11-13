@@ -1,0 +1,16 @@
+{
+  "season": "2026-2027",
+  "updatedAt": "2026-11-13",
+  "standings": [
+    { "position": 1, "teamId": "ego-fc", "general": 653, "lastRound": 48, "players": 11 },
+    { "position": 2, "teamId": "racing-negreira", "general": 633, "lastRound": 49, "players": 11 },
+    { "position": 3, "teamId": "bicholover", "general": 586, "lastRound": 36, "players": 11 },
+    { "position": 4, "teamId": "deportivo-sil", "general": 561, "lastRound": 38, "players": 11 },
+    { "position": 5, "teamId": "los-santos", "general": 542, "lastRound": 61, "players": 11 },
+    { "position": 6, "teamId": "real-sirvent", "general": 524, "lastRound": 44, "players": 11 },
+    { "position": 7, "teamId": "moucho-maximo", "general": 513, "lastRound": 39, "players": 11 },
+    { "position": 8, "teamId": "mouchometa", "general": 505, "lastRound": 67, "players": 11 },
+    { "position": 9, "teamId": "boullon", "general": 484, "lastRound": 46, "players": 11 },
+    { "position": 10, "teamId": "fc-del-rio", "general": 478, "lastRound": 56, "players": 11 }
+  ]
+}

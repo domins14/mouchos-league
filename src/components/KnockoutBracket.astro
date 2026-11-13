@@ -1,0 +1,9 @@
+---
+const rounds = [['Octavos de final', 8], ['Cuartos de final', 4], ['Semifinales', 2], ['Final', 1]] as const;
+---
+<div class="bracket" role="img" aria-label="Cuadro de eliminatorias pendiente de definir">
+  {rounds.map(([name, count]) => <section class="bracket-round">
+    <h3>{name}</h3>
+    <div class="ties">{Array.from({ length: count }).map((_, i) => <div class="tie"><span>Por definir</span><span>Por definir</span><b>{String(i + 1).padStart(2, '0')}</b></div>)}</div>
+  </section>)}
+</div>

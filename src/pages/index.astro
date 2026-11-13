@@ -1,0 +1,39 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import LeagueTable from '../components/LeagueTable.astro';
+import { getLeague } from '../lib/data';
+
+const base = import.meta.env.BASE_URL;
+const news = (await getCollection('noticias')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const featured = news.find((item) => item.data.featured) ?? news[0];
+const secondary = news.filter((item) => item.id !== featured.id).slice(0, 4);
+const primera = getLeague('primera');
+const segunda = getLeague('segunda');
+---
+<BaseLayout title="Mouchos League · Esto no es un juego" Portal oficial de Mouchos League: clasificaciones, Copa Mouchense, noticias y actualidad fantasy.">
+  <section class="home-hero">
+    <img src={`${base}${(featured.data.image ?? 'images/hero-stadium.webp').replace(/^\//, '')}`} alt={featured.data.imageAlt ?? 'Estadio de fútbol iluminado durante un partido nocturno'} />
+    <div class="container hero-content">
+      <span class="hero-kicker">Portada · {featured.data.demo ? 'Contenido de demostración' : featured.data.category}</span>
+      <h1>{featured.data.title}</h1>
+      <p>{featured.data.summary}</p>
+      <a class="hero-cta" href={`${base}noticias/${featured.id}/`}>Leer la noticia →</a>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="section-head"><div><p class="eyebrow">La redacción</p><h2>Última hora</h2></div><a class="section-link" href={`${base}noticias/`}>Todas las noticias</a></div>
+    <div class="home-grid"><NewsCard entry={featured} featured /><div class="news-stack">{secondary.slice(0, 2).map((item) => <NewsCard entry={item} />)}</div></div>
+
+    <div class="section-head"><div><p class="eyebrow">Puntos fantasy acumulados</p><h2>Las clasificaciones</h2></div><span class="section-link">Jornada actual</span></div>
+    <div class="league-previews">
+      <section class="league-panel"><div class="panel-title"><div><p class="eyebrow">La élite</p><h3>Primera Mouchos</h3></div><span>10 equipos</span></div><LeagueTable rows={primera.standings} mode="relegation" compact /><a class="back-link" href={`${base}primera/`}>Ver clasificación completa →</a></section>
+      <section class="league-panel"><div class="panel-title"><div><p class="eyebrow">La batalla por subir</p><h3>Segunda Mouchos</h3></div><span>11 equipos</span></div><LeagueTable rows={segunda.standings} mode="promotion" compact /><a class="back-link" href={`${base}segunda/`}>Ver clasificación completa →</a></section>
+    </div>
+
+    <div class="section-head"><div><p class="eyebrow">20 equipos · 1 campeón</p><h2>La Copa Mouchense</h2></div></div>
+    <section class="cup-promo"><div class="cup-promo-copy"><p class="eyebrow">Fase de grupos</p><h2>Todo o nada</h2><p>Cuatro grupos, cinco equipos por grupo y dieciséis plazas para los octavos. La competición donde cada punto fantasy cuenta dos veces.</p><a class="hero-cta" href={`${base}copa/`}>Entrar en la Copa →</a></div><div class="cup-trophy"><img src={`${base}images/copa-moucho.webp`} alt="Trofeo de la Copa Mouchense con forma de moucho" loading="lazy" /></div></section>
+  </div>
+</BaseLayout>

@@ -1,0 +1,10 @@
+---
+import type { Team } from '../lib/data';
+interface Props { team: Team; size?: 'sm' | 'md' | 'lg'; }
+const { team, size = 'md' } = Astro.props;
+const customBadge = `${import.meta.env.BASE_URL}images/teams/${team.id}.webp`;
+---
+<span class:list={['team-badge', `badge-${size}`]} style={`--badge-a:${team.colors[0]};--badge-b:${team.colors[1]}`}>
+  <img src={customBadge} alt="" loading="lazy" onerror="this.remove()" />
+  <span aria-hidden="true">{team.shortName}</span>
+</span>

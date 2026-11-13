@@ -1,0 +1,23 @@
+[
+  { "id": "ego-fc", "name": "Ego FC", "shortName": "EGO", "colors": ["#b8ff32", "#07141e"] },
+  { "id": "racing-negreira", "name": "Racing de Negreira", "shortName": "RDN", "colors": ["#ff4d43", "#ffffff"] },
+  { "id": "bicholover", "name": "BICHOLOVER", "shortName": "BIC", "colors": ["#ffc832", "#18181b"] },
+  { "id": "deportivo-sil", "name": "RC Deportivo do Sil", "shortName": "SIL", "colors": ["#43a5ff", "#ffffff"] },
+  { "id": "los-santos", "name": "Los Santos FC", "shortName": "LSF", "colors": ["#e8edf2", "#172554"] },
+  { "id": "real-sirvent", "name": "Real sirvent F.C", "shortName": "RSF", "colors": ["#7357ff", "#ffffff"] },
+  { "id": "moucho-maximo", "name": "MOUCHO MAXIMO", "shortName": "MAX", "colors": ["#ff7a1a", "#111827"] },
+  { "id": "boullon", "name": "Boullón FC", "shortName": "BOU", "colors": ["#00c98d", "#063b32"] },
+  { "id": "mouchometa", "name": "Mouchometa", "shortName": "MTA", "colors": ["#ed4d9a", "#ffffff"] },
+  { "id": "fc-del-rio", "name": "Fc Del Rio", "shortName": "FDR", "colors": ["#40c8ff", "#082f49"] },
+  { "id": "parvos", "name": "Parvos FC", "shortName": "PAR", "colors": ["#b8ff32", "#1b2a10"] },
+  { "id": "mirazo", "name": "Mirazo UD", "shortName": "MIR", "colors": ["#ffdd45", "#172554"] },
+  { "id": "domins", "name": "Domin's", "shortName": "DOM", "colors": ["#f34f59", "#ffffff"] },
+  { "id": "puraysincorte", "name": "Puraysincorte FC", "shortName": "PUR", "colors": ["#884dff", "#ffffff"] },
+  { "id": "fillos-do-mar", "name": "Fillos do Mar FC", "shortName": "FDM", "colors": ["#008bd2", "#ffffff"] },
+  { "id": "mercenarios", "name": "Mercenarios FC", "shortName": "MER", "colors": ["#ec3434", "#171717"] },
+  { "id": "villancicos", "name": "Villancico's U.D", "shortName": "VIL", "colors": ["#f2f2f2", "#1d4ed8"] },
+  { "id": "alpha", "name": "Alpha FC", "shortName": "ALP", "colors": ["#20c1ff", "#10233b"] },
+  { "id": "sporting-brionx", "name": "Sporting de Brionx", "shortName": "SBR", "colors": ["#25b46b", "#ffffff"] },
+  { "id": "borjinetta", "name": "Borjinetta", "shortName": "BOR", "colors": ["#ff4f9a", "#25105a"] },
+  { "id": "yonkarros", "name": "yonkarros", "shortName": "YON", "colors": ["#f59e0b", "#422006"] }
+]
