@@ -22,7 +22,7 @@ jobs:
           node-version: 26
           cache: npm
       - name: Configurar GitHub Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
       - name: Instalar dependencias
         run: npm ci
       - name: Compilar sitio
